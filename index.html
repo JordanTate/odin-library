@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library - The Odin Project</title>
+    <script src="/library.js" defer></script>
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="/css/main.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>git 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container-fluid py-3 shadow">
+        <div class="container">
+            <h1 class="mb-4">my library.</h1>
+        </div>
+    </div>
+
+    <div class="container my-5 d-flex justify-content-center">
+        <button 
+            type="button" 
+            class="btn btn-lg btn-white fw-bold rounded-0 shadow" 
+            data-bs-toggle="modal" 
+            data-bs-target="#bookModal"
+           >add a book &plus;
+        </button>
+    </div>
+
+    <div class="container">
+        <div id="my-library" class="row">
+            <!-- Handled via library.js -->
+        </div>
+    </div>
+    
+
+    <div id="bookModal" class="modal fade" tabindex="-1" aria-labelledby="bookModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h3 id="bookModalLabel" class="modal-title fw-bold">add new book</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="book-title" class="form-label">Title</label>
+                            <input type="text" id="book-title" name="book-title" class="form-control">
+                            <p class="d-none text-danger">Please enter a Book Title.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="book-author" class="form-label">Author</label>
+                            <input type="text" id="book-author" name="book-author" class="form-control">
+                            <p class="d-none text-danger">Please enter a Author.</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="book-status" class="form-label">Status</label>
+                            <select name="book-status" id="book-status" class="form-select">
+                                <option value="Unread" selected>Unread</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Read">Read</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-0">
+                    <button id="addBook" type="button" class="btn btn-lg btn-primary w-100">Submit</button>
+                    <button id="dismissModal" type="button" class="d-none btn btn-lg btn-primary w-100" data-bs-dismiss="modal">Dismiss</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
